@@ -1,33 +1,7 @@
 html,body,.container {
     height:100%;
-    background-color: aliceblue;
+    background-color: rgb(245, 245, 245);
 }
-.container {
-    display: table;
-    width: 100%;
-    margin-top: -50px;
-    padding: 80px 0 0 0;
-    box-sizing: border-box;
-}
-
-.row {
-    height: 100%;
-    display: table-row;
-}
-
-.col-md-3 {   
-    background:rgb(201, 201, 201);
-}
-
-.col-md-9 {
-    background: rgb(242, 242, 242);	
-}
-
-.row .no-float {
-    display: table-cell;
-    float: none;
-}
-
 #range {
     font-size: 24px;
     color: #000;
@@ -45,10 +19,15 @@ li::before{
 }
 
 li:hover {
-    background-color: #f7f8f8;
+    background-color: rgb(214, 214, 214);
 }
 
 footer {
     text-align: right;
     padding: 0 80px 0 0;
 }
+
+.active{
+    background-color: lightgreen;
+}
+  
