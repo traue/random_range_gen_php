@@ -29,20 +29,18 @@
                 <form action="">
                     <div class="mb-3">
                         <label for="startgange" class="form-label">Start</label>
-                        <input type="number" class="form-control text-center" name="start" id="start" value="<?=$start?>">
+                        <input type="number" class="form-control text-center" name="start" id="start" value="<?= $start; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="startgange" class="form-label">End</label>
-                        <input type="number" class="form-control text-center" name="end" id="end" value="<?=$end?>">
+                        <input type="number" class="form-control text-center" name="end" id="end" value="<?= $end; ?>">
                     </div>
                     <button type="submit" style="width: 100%;" class="btn btn-primary btn-md btn-block">Generate...</button>
                 </form>
             </div>
             <div class="col-md-9 no-float">
                 <ul id="range">
-                    <?php foreach (randomGen($start, $end) as $key => $value) : ?>
-                        <li> <?= $value ?></li>
-                    <?php endforeach; ?>
+                  <?php orderHTML($start, $end); ?>
                 </ul>
             </div>
         </div>

@@ -35,11 +35,17 @@ html,body,.container {
 
 li{
     list-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 li::before{
     content: "\00BB";
     color:hotpink;
+}
+
+li:hover {
+    background-color: #f7f8f8;
 }
 
 footer {
