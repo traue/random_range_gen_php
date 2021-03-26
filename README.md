@@ -1,4 +1,5 @@
 # Random Range Generator
+----
 
 This is a very simple PHP project whose objective is to generate random numbers, within a range, without repeating them.
 <br><br>
