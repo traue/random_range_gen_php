@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 no-float">
-                <form action="index.php">
+                <form action="">
                     <div class="mb-3">
                         <label for="startgange" class="form-label">Start</label>
                         <input type="number" class="form-control text-center" name="start" id="start" value="<?=$start?>">
