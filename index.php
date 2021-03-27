@@ -60,6 +60,7 @@
             </div>
         </div>
     </div>
+    <div class="corner-ribbon bottom-right sticky blue shadow"><a href="https://github.com/traue/random_range_gen_php">@GitHub</a></div>
     <script src="js/click.js"></script>
 </body>
 </html>
