@@ -1,13 +1,11 @@
-var ul = document.getElementById("list");
-
-var listItems = ul.getElementsByTagName("li");
-
-for(li of  listItems){
-  li.addEventListener('click', function(){
-    if(this.classList.contains('active')){
-      this.classList.remove("active");
-    } else {
-      this.classList.add("active");
-    }
+$(document).ready(function () {
+  $('tr').click(function () {
+      console.log(this);
+      if(!this.classList.contains('done')){
+          $(this).addClass("done");
+      }
+      else {
+          $(this).removeClass("done");
+      }
   });
-}
+});

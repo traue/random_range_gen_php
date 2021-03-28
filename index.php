@@ -1,66 +1,93 @@
 <?php
-    include 'random.php';
-    $start = isset($_GET['start']) ? $_GET["start"] : 1;
-    $end = isset($_GET['end']) ? $_GET["end"] : 20;
+    include("random.php");
+    $start = isset($_POST['start']) ? $_POST["start"] : 1;
+    $end = isset($_POST['end']) ? $_POST["end"] : 20;
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-br" class="h-100">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/dices.png">
-    <script src="js/validate.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Thiago G. Traue">
+    <link href="https://traue.com.br/random_range/img/dices.png" rel="icon" type="image/x-icon" />
+
     <title>Random Range Generator</title>
-</head>
-<body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-            <img src="img/dices.png" alt="dices" width="30" class="d-inline-block align-text-top">
-            Random Range Generator
-            </a>
-        </div>
-    </nav>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <form role="form" class="form-inline" id="rangeform" onsubmit="return validateForm();">
-                    <div class="form-group pt-3">
-                        <label>
-                            Start:
-                        </label>
-                        <input type="number" class="form-control text-center" id="rangestart" name="start" value="<?= $start; ?>" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/validate.js"></script>
+
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://traue.com.br/random_range/img/dices.png" alt="Random Range Generator" width="30" class="d-inline-block align-text-top"> Random Range Generator
+                </a>
+            </div>
+        </nav>
+        </div>
+    </header>
+
+    <main role="main">
+        <div class="container-fluid">
+
+            <form action="index.php" method="post" id="rangeform" onsubmit="return validateForm();">
+                <div class="row top">
+                    <div class="form-group col-md-2 mb-2" id="rangeform">
+                        <label>Start</label>
+                        <input type="number" class="form-control" name="start" id="rangestart" value="<?= $start; ?>">
                     </div>
-                    <div class="form-group pt-2">
-                        <label>
-                            End:
-                        </label>
-                        <input type="number" class="form-control text-center" id="rangeend" name="end" value="<?= $end; ?>" />
+
+                    <div class="form-group col-md-2 mb-2">
+                        <label>End</label>
+                        <input type="number" class="form-control" name="end" id="rangeend" value="<?= $end; ?>">
                     </div>
-                    <div class="pt-4"></div>
-                    <button type="submit" style="width: 100%;" class="btn btn-primary btn-block">
-                        Generate
-                    </button>
-                </form>
+
+                    <div class="form-group col-md-1 mb-2">
+                        <label>&nbsp;</label>
+                        <button type="submit" class="btn btn-primary"  style="margin: 0 auto;">Generate</button>
+                    </div>
+                </div>
+            </form>
+
+            <br><br>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Result</h3>
+                    <br>
+                </div>
+                <div class="panel-body scrollable-panel">
+                <table class="table table-bordered table-striped text-center" id="generated">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Random Number</th>
+					</tr>
+				</thead>
+				<tbody>
+                    <?php orderHtml($start, $end); ?>
+				</tbody>
+			</table>
+                </div>
             </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="text-center">
-                    List of random numbers:
-                </h3>
-                <ul id="list">
-                    <?php orderHTML($start, $end); ?>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="corner-ribbon bottom-right sticky blue shadow"><a href="https://github.com/traue/random_range_gen_php">@GitHub</a></div>
+    </main>
     <script src="js/click.js"></script>
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <span class="text-muted"><a href="https://github.com/traue/random_range_gen_php"><img height="30" 
+            src="https://raw.githubusercontent.com/simple-icons/simple-icons/9fdbb57ccc1b8613f080b77be6846275113d5662/icons/github.svg"></a><br>Thiago G. Traue</span>
+        </div>
+    </footer>
 </body>
 </html>
