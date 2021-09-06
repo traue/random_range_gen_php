@@ -36,7 +36,8 @@ footer {
 }
 
 .scrollable-panel {
-    height: 557px;
+    /* height: 557px; */
+    height: 250px;
     overflow-y: scroll;
     overflow: auto;
     width: 100%;
