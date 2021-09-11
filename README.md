@@ -30,7 +30,7 @@ Or BibTeX for LaTeX:
   title = {RRG - Random Range Generator},
   url = {https://github.com/traue/random_range_gen_php},
   year = {2021},
-  month = {April}
+  month = {September}
 }
 ```
 
