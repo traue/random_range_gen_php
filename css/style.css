@@ -13,11 +13,6 @@ li{
     padding-bottom: 5px;
 }
 
-li::before{
-    content: "\00BB";
-    color:hotpink;
-}
-
 li:hover {
     background-color: rgb(214, 214, 214);
 }
@@ -46,6 +41,10 @@ footer {
     margin-top: 20px;
 }
 
+.exportArea {
+    background-color: red;
+}
+
 tr:hover:nth-child(n-1) td {background-color: #f5f5c0; }
 
 /* fixed table head */
@@ -62,7 +61,6 @@ table th {
     float: right;
     margin-top: 0.3em;
     background-color: rgb(255, 255, 255);
-    align-items: right;
     padding: auto;
 }
 

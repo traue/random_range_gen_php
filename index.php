@@ -22,7 +22,7 @@
     <script type="text/javascript" src="js/xlsx.full.min.js"></script>
     <script type="text/javascript" src="js/exportTable.js"></script>
     <script src="js/validate.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -60,31 +60,28 @@
             </form>
 
             <br><br>
-
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">Result</h3>
                     <br>
                 </div>
                 <div class="panel-body scrollable-panel">
-                <table class="table table-bordered table-striped text-center" id="generated">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Random Number</th>
-					</tr>
-				</thead>
-				<tbody>
-                    <?php orderHtml($start, $end); ?>
-				</tbody>
-			</table>
+                    <table class="table table-bordered table-striped text-center" id="generated">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Random Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php orderHtml($start, $end); ?>
+                    </tbody>
+                    </table>
                 </div>
-                <div class="export">
-                    <button class="btExport" onclick="ExportToExcel('xlsx')">
+                <button class="btExport" onclick="ExportToExcel('xlsx')">
                         Export to Excel
-                        <img src="img/excel.ico" alt="Save icon"/>
-                    </button>
-                </div>
+                        <img class="excelIcon" src="img/excel.ico" alt="Export to Excel"/>
+                </button>
             </div>
         </div>
 
