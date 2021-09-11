@@ -36,8 +36,7 @@ footer {
 }
 
 .scrollable-panel {
-    /* height: 557px; */
-    height: 250px;
+    height: 380px;
     overflow-y: scroll;
     overflow: auto;
     width: 100%;
@@ -47,4 +46,26 @@ footer {
     margin-top: 20px;
 }
 
-tr:hover:nth-child(n-1) td {background-color: #ffff99; }
+tr:hover:nth-child(n-1) td {background-color: #f5f5c0; }
+
+/* fixed table head */
+table th {
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+    z-index: 10; 
+    background: hsl(185, 8%, 33%);
+    color: white;
+}
+
+.btExport {
+    float: right;
+    margin-top: 0.3em;
+    background-color: rgb(255, 255, 255);
+    align-items: right;
+    padding: auto;
+}
+
+.btExport img {
+    width: 25px;
+}

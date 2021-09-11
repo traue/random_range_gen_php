@@ -19,10 +19,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="js/exportTable.js"></script>
     <script src="js/validate.js"></script>
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="form-group col-md-2 mb-2">
-                        <label>End</label>
+                        <label>End (max. 3000)</label>
                         <input type="number" class="form-control" name="end" id="rangeend" value="<?= $end; ?>">
                     </div>
 
@@ -79,8 +79,15 @@
 				</tbody>
 			</table>
                 </div>
+                <div class="export">
+                    <button class="btExport" onclick="ExportToExcel('xlsx')">
+                        Export to Excel
+                        <img src="img/excel.ico" alt="Save icon"/>
+                    </button>
+                </div>
             </div>
         </div>
+
     </main>
     <script src="js/click.js"></script>
     <footer class="footer mt-auto py-3">
