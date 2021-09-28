@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="form-group col-md-2 mb-2">
-                        <label>End (max. 3000)</label>
+                        <label>End <span class="small text-muted">(max. 3000)</span></label>
                         <input type="number" class="form-control" name="end" id="rangeend" value="<?= $end; ?>">
                     </div>
 
